@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import CardComponent from './Card/Card';
 import styles from './Card.module.css';
 
