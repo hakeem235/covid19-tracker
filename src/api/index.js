@@ -14,7 +14,8 @@ export const fetchData = async (country) => {
 
     return { confirmed, recovered, deaths, lastUpdate };
   } catch (error) {
-    return error;
+    console.error('Error fetching data:', error);
+    return {};
   }
 };
 
@@ -24,7 +25,8 @@ export const fetchDailyData = async () => {
 
     return data.map(({ confirmed, deaths, reportDate: date }) => ({ confirmed: confirmed.total, deaths: deaths.total, date }));
   } catch (error) {
-    return error;
+    console.error('Error fetching daily data:', error);
+    return [];
   }
 };
 
@@ -45,6 +47,7 @@ export const fetchCountries = async () => {
 
     return countries.map((country) => country.name);
   } catch (error) {
-    return error;
+    console.error('Error fetching countries:', error);
+    return [];
   }
 };
